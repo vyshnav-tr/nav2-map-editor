@@ -1,0 +1,18 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="512" y2="512" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6366F1"/>
+      <stop offset="1" stop-color="#06B6D4"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="116" fill="url(#bg)"/>
+  <!-- map grid -->
+  <g stroke="#FFFFFF" stroke-opacity="0.18" stroke-width="6">
+    <path d="M128 96V416M256 96V416M384 96V416M96 128H416M96 256H416M96 384H416"/>
+  </g>
+  <!-- selected zone -->
+  <rect x="168" y="176" width="176" height="160" rx="22" fill="#FFFFFF" fill-opacity="0.22" stroke="#FFFFFF" stroke-width="20"/>
+  <!-- corner handles -->
+  <circle cx="168" cy="176" r="30" fill="#FFFFFF"/>
+  <circle cx="344" cy="336" r="30" fill="#FFFFFF"/>
+</svg>
