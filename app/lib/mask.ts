@@ -49,14 +49,17 @@ function valueToPixel(type: MaskType, value: number): number {
 
 export function maskMetaFor(type: MaskType, base: MapMeta, imageName: string): MapMeta {
   if (type === "keepout") {
+    // Matches the common Nav2 keepout_mask config. Our pixels are pure
+    // black (keepout → occ 1.0 → 100) or near-white (free → occ ~0 → 0),
+    // so scale and trinary produce the same OccupancyGrid here.
     return {
       image: imageName,
-      mode: "trinary",
+      mode: "scale",
       resolution: base.resolution,
       origin: base.origin,
       negate: 0,
       occupied_thresh: 0.65,
-      free_thresh: 0.196,
+      free_thresh: 0.25,
     };
   }
   // Speed mask: scale mode with thresholds outside the data range so that
