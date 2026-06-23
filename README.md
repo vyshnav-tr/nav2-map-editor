@@ -1,4 +1,6 @@
-# Nav2 Map Editor
+# Nav2 Costmap Filter Editor
+
+### 👉 [Open the live app](https://vyshnav-tr.github.io/nav2-costmap-filter-editor/) — no install required
 
 A browser-based editor for drawing **Nav2 costmap filter masks** — keepout zones, speed-limit zones and walls — directly on top of your ROS 2 occupancy map.
 

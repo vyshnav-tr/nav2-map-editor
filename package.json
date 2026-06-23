@@ -1,5 +1,5 @@
 {
-  "name": "nav2-map-editor",
+  "name": "nav2-costmap-filter-editor",
   "version": "0.1.0",
   "private": true,
   "description": "Browser-based editor for drawing Nav2 costmap filter masks (keepout, speed-limit, walls) on a ROS 2 occupancy map.",
