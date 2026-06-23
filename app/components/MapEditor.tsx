@@ -25,7 +25,10 @@ import {
   ArrowLeft01Icon,
   ArrowDown01Icon,
   SparklesIcon,
+  GithubIcon,
 } from "@hugeicons/core-free-icons";
+
+const REPO_URL = "https://github.com/vyshnav-tr/nav2-costmap-filter-editor";
 import { parsePgm, encodePgm } from "../lib/pgm";
 import { MapMeta, parseMapYaml, serializeMapYaml } from "../lib/rosYaml";
 import { maskMetaFor } from "../lib/mask";
@@ -219,12 +222,15 @@ function Editor({ map, onClose }: { map: MapData; onClose: () => void }) {
   const baseRef = useRef<HTMLCanvasElement | null>(null);
 
   const shapesRef = useRef(shapes);
-  shapesRef.current = shapes;
   const viewRef = useRef(view);
-  viewRef.current = view;
   const draftPolyRef = useRef<Pt[] | null>(null);
-  draftPolyRef.current = draftPoly;
   const previewGrid = useRef<Pt | null>(null);
+  // Mirror the latest state into refs for use in event handlers and canvas draw.
+  useEffect(() => {
+    shapesRef.current = shapes;
+    viewRef.current = view;
+    draftPolyRef.current = draftPoly;
+  });
 
   // Undo/redo history: each entry is a full snapshot of the shapes array.
   const historyRef = useRef<Shape[][]>([[]]);
@@ -955,6 +961,17 @@ function Editor({ map, onClose }: { map: MapData; onClose: () => void }) {
           <div className="mx-1 h-6 w-px bg-line" />
           <ToolButton onClick={fit} icon={FitToScreenIcon} label="Fit to screen" />
         </div>
+
+        {/* GitHub link */}
+        <a
+          href={REPO_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          title="View source on GitHub"
+          className="absolute right-3 top-3 z-10 flex h-9 w-9 items-center justify-center rounded-xl border border-line bg-panel/95 text-fg-muted shadow-lg ring-1 ring-black/5 backdrop-blur transition hover:bg-elevated hover:text-fg"
+        >
+          <HugeiconsIcon icon={GithubIcon} size={19} strokeWidth={1.8} />
+        </a>
 
         <div ref={containerRef} className="h-full w-full touch-none" onContextMenu={(e) => e.preventDefault()}>
           <canvas
