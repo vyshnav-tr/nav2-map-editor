@@ -6,6 +6,8 @@ A browser-based editor for drawing **Nav2 costmap filter masks** — keepout zon
 
 Load your `map.pgm` + `map.yaml`, draw zones with rectangle / ellipse / polygon tools, and export ready-to-use `.pgm` + `.yaml` mask pairs bundled in a single `.zip`. Everything runs **entirely in your browser** — your maps never leave your machine, and there is no backend to deploy.
 
+![Nav2 Costmap Filter Editor — drawing keepout, speed and wall zones on an occupancy map](./docs/screenshot.png)
+
 ## Features
 
 - **Import** a standard ROS 2 map (`.pgm` image + `.yaml` metadata). PGM `P5` (binary) and `P2` (ASCII) are both supported.
